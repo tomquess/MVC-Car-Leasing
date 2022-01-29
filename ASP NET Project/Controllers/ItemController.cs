@@ -23,9 +23,20 @@ namespace ASP_NET_Project.Controllers
             return View(objList);
         }
 
+        // GET-Create
         public IActionResult Create()
         {
             return View();
+        }
+
+        // POST-Create
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Create(Item obj)
+        {
+            _db.Items.Add(obj);
+            _db.SaveChanges();
+            return RedirectToAction("Index");
         }
     }
 }
