@@ -1,4 +1,4 @@
-﻿@model IEnumerable<ASP_NET_Project.Models.Item>
+﻿@model ASP_NET_Project.Models.Item
 
 <form method="post" asp-action="Create">
     <div class="border p-3">
@@ -9,33 +9,33 @@
             <div class="col-12">
                 <div class="form-group row">
                     <div class="col-4">
-                        ITEMNAME
+                        <label asp-for="ItemName"></label>
                     </div>
                     <div class="col-4">
-                        BORROWER
+                        <label asp-for="Borrower"></label>
                     </div>
                     <div class="col-4">
-                        LENDER
+                        <label asp-for="Lender"></label>
                     </div>
                 </div>
                 <div class="form-group row">
                     <div class="col-4">
-                        TEXTBOX HERE
+                        <input asp-for="ItemName" class="form-control"/>
                     </div>
                     <div class="col-4">
-                        TEXTBOX HERE
+                        <input asp-for="Borrower" class="form-control" />
                     </div>
                     <div class="col-4">
-                        TEXTBOX HERE
+                        <input asp-for="Lender" class="form-control" />
                     </div>
                 </div>
                 <div class="form-group row">
-                    <div class="col-8 text-center row">
+                    <div class="col-8 offset-2 text-center row">
                         <div class="col">
-                            CREATE BUTTON
+                            <input type="submit" class="btn btn-info w-75" value="Create"/>
                         </div>
                         <div class="col">
-                            GO BACK BUTTON
+                            <a asp-action="Index" class="w-75 btn btn-danger">Back</a>
                         </div>
                     </div>
                 </div>
