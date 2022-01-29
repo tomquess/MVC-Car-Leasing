@@ -22,5 +22,10 @@ namespace ASP_NET_Project.Controllers
             IEnumerable<Item> objList = _db.Items;
             return View(objList);
         }
+
+        public IActionResult Create()
+        {
+            return View();
+        }
     }
 }
