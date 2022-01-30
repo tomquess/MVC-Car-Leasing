@@ -31,8 +31,8 @@ namespace ASP_NET_Project
                 );
             services.AddAuthentication().AddGoogle(googleOptions =>
             {
-                googleOptions.ClientId = configuration["Authentication:Google:Clientid"];
-                googleOptions.ClientSecret = configuration["Authentication:Google:ClientSecret"];
+                googleOptions.ClientId = "249796913171-mkljd0fit6eku2nhdq46kug46gdsirkq.apps.googleusercontent.com";
+                googleOptions.ClientSecret = "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";
             });
             services.AddControllersWithViews();
         }
