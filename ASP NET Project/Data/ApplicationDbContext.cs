@@ -17,5 +17,9 @@ namespace ASP_NET_Project.Data
         public DbSet<Item> Items { get; set; }
 
         public DbSet<Car> Cars { get; set; }
+
+        public DbSet<Client> Clients { get; set; }
+
+        public DbSet<Lending> Lendings { get; set; }
     }
 }
