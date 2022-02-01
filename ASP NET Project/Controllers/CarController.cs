@@ -77,13 +77,13 @@ namespace ASP_NET_Project.Controllers
         ////}
 
         // POST: CarController/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(Car obj,int id, IFormCollection collection)
-        {
-            _db.Cars.Remove(obj);
-            _db.SaveChanges();
-            return RedirectToAction("Index");
-        }
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult Delete(Car obj,int id, IFormCollection collection)
+        //{
+        //    _db.Cars.Remove(obj);
+        //    _db.SaveChanges();
+        //    return RedirectToAction("Index");
+        //}
     }
 }
