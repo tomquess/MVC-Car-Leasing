@@ -81,41 +81,35 @@ namespace ASP_NET_Project.Controllers
             return RedirectToAction("Index");
         }
 
-        // GET: CarController/Edit/5
-        public ActionResult Edit(int id)
+        //get update
+        public IActionResult Update(int? id)
         {
-            return View();
+            if (id == null || id == 0)
+            {
+                return NotFound();
+            }
+            var obj = _db.Cars.Find(id);
+            if (obj == null)
+            {
+                return NotFound();
+            }
+            return View(obj);
         }
 
-        // POST: CarController/Edit/5
+        //post update
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public IActionResult Update(Car obj)
         {
-            try
+            if (ModelState.IsValid)
             {
-                return RedirectToAction(nameof(Index));
+                _db.Cars.Update(obj);
+                _db.SaveChanges();
+                return RedirectToAction("Index");
             }
-            catch
-            {
-                return View();
-            }
+            return View(obj);
         }
 
-        // GET: CarController/Delete/5
-       // public ActionResult Delete(int id)
-       // {
-        //    return View();
-        ////}
 
-        // POST: CarController/Delete/5
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult Delete(Car obj,int id, IFormCollection collection)
-        //{
-        //    _db.Cars.Remove(obj);
-        //    _db.SaveChanges();
-        //    return RedirectToAction("Index");
-        //}
     }
 }
