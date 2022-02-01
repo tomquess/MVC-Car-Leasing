@@ -24,7 +24,7 @@ namespace ASP_NET_Project.Models
         [DisplayFormat(DataFormatString = "{0: yyyy}", ApplyFormatInEditMode = true)]
         public DateTime RokProdukcji { get; set; }
 
-        [Display(Name = "Kod")]
+        [Display(Name = "Stan Gotowości")]
         public string StanGotowosci { get; set; }
 
     }

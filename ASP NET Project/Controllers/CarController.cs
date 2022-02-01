@@ -33,7 +33,8 @@ namespace ASP_NET_Project.Controllers
         }
 
         // GET: CarController/Create
-        public ActionResult Create()
+        [HttpGet]
+        public IActionResult Create()
         {
             return View();
         }
@@ -41,16 +42,11 @@ namespace ASP_NET_Project.Controllers
         // POST: CarController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public IActionResult Create(Car obj)
         {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            _db.Cars.Add(obj);
+            _db.SaveChanges();
+            return RedirectToAction("Index");
         }
 
         // GET: CarController/Edit/5
@@ -75,24 +71,19 @@ namespace ASP_NET_Project.Controllers
         }
 
         // GET: CarController/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
+       // public ActionResult Delete(int id)
+       // {
+        //    return View();
+        ////}
 
         // POST: CarController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public ActionResult Delete(Car obj,int id, IFormCollection collection)
         {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            _db.Cars.Remove(obj);
+            _db.SaveChanges();
+            return RedirectToAction("Index");
         }
     }
 }
