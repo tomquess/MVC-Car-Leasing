@@ -9,12 +9,12 @@ using System.Threading.Tasks;
 
 namespace ASP_NET_Project.Controllers
 {
-    public class CarController : Controller
+    public class ClientController : Controller
     {
 
         private readonly ApplicationDbContext _db;
 
-        public CarController(ApplicationDbContext db)
+        public ClientController(ApplicationDbContext db)
         {
             _db = db;
         }
@@ -22,10 +22,15 @@ namespace ASP_NET_Project.Controllers
         // GET: CarController
         public ActionResult Index()
         {
-            IEnumerable<Car> carList = _db.Cars;
-            return View(carList);
+            IEnumerable<Client> clientList = _db.Clients;
+            return View(clientList);
         }
 
+        // GET: CarController/Details/5
+        public ActionResult Details(int id)
+        {
+            return View();
+        }
 
         // GET: CarController/Create
         [HttpGet]
@@ -37,10 +42,11 @@ namespace ASP_NET_Project.Controllers
         // POST: CarController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create(Car obj)
-        {   if (ModelState.IsValid)
+        public IActionResult Create(Client obj)
+        {
+            if (ModelState.IsValid)
             {
-                _db.Cars.Add(obj);
+                _db.Clients.Add(obj);
                 _db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -49,12 +55,12 @@ namespace ASP_NET_Project.Controllers
         //get delete
         public IActionResult Delete(int? id)
         {
-            if (id == null || id==0)
+            if (id == null || id == 0)
             {
                 return NotFound();
             }
-            var obj = _db.Cars.Find(id);
-            if(obj == null)
+            var obj = _db.Clients.Find(id);
+            if (obj == null)
             {
                 return NotFound();
             }
@@ -66,12 +72,12 @@ namespace ASP_NET_Project.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult DeletePost(int? id)
         {
-            var obj = _db.Cars.Find(id);
-            if(obj == null)
+            var obj = _db.Clients.Find(id);
+            if (obj == null)
             {
                 return NotFound();
             }
-            _db.Cars.Remove(obj);
+            _db.Clients.Remove(obj);
             _db.SaveChanges();
             return RedirectToAction("Index");
         }
@@ -83,7 +89,7 @@ namespace ASP_NET_Project.Controllers
             {
                 return NotFound();
             }
-            var obj = _db.Cars.Find(id);
+            var obj = _db.Clients.Find(id);
             if (obj == null)
             {
                 return NotFound();
@@ -94,11 +100,11 @@ namespace ASP_NET_Project.Controllers
         //post update
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Update(Car obj)
+        public IActionResult Update(Client obj)
         {
             if (ModelState.IsValid)
             {
-                _db.Cars.Update(obj);
+                _db.Clients.Update(obj);
                 _db.SaveChanges();
                 return RedirectToAction("Index");
             }
