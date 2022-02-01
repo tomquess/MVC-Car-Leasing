@@ -1,0 +1,54 @@
+﻿@model IEnumerable<ASP_NET_Project.Models.Car>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NrRejestracji)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Model)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RokProdukcji)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StanGotowosci)
+            </th>
+            <th>
+                <a onclick="showInPopupCreate('@Url.Action("Create","Car",null,Context.Request.Scheme)', 'Dodaj saomochód')" class="btn btn-success">
+                    <i class="fas fa-random"></i>Dodaj samochód
+                </a>
+
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NrRejestracji)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Model)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RokProdukcji)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StanGotowosci)
+                </td>
+                <td>
+                    <a onclick="showInPopupCreate('@Url.Action("Edit","Car",item.Id,Context.Request.Scheme)', 'Dodaj saomochód')" class="btn btn-success">
+                        <i class="fas fa-random"></i>Edytuj
+                    </a>
+                    <a asp-controller="Car" asp-action="Delete" asp-route-id="@item.Id">Delete12312312</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>

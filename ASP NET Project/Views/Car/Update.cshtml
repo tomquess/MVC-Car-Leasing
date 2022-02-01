@@ -2,13 +2,9 @@
 
 @{
     ViewData["Title"] = "Update";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = null;
 }
 
-<h1>Update</h1>
-
-<h4>Car</h4>
-<hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Update">
@@ -16,7 +12,12 @@
             <input type="hidden" asp-for="Id" />
             <div class="form-group">
                 <label asp-for="NrRejestracji" class="control-label"></label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">#</div>
+                    </div>
                 <input asp-for="NrRejestracji" class="form-control" />
+                </div>
                 <span asp-validation-for="NrRejestracji" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -35,13 +36,10 @@
                 <span asp-validation-for="StanGotowosci" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="Wprowadź" class="btn btn-primary btn-block" />
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
 
