@@ -43,8 +43,40 @@ namespace ASP_NET_Project.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Create(Car obj)
+        {   if (ModelState.IsValid)
+            {
+                _db.Cars.Add(obj);
+                _db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(obj);
+        }
+        //get delete
+        public IActionResult Delete(int? id)
         {
-            _db.Cars.Add(obj);
+            if (id == null || id==0)
+            {
+                return NotFound();
+            }
+            var obj = _db.Cars.Find(id);
+            if(obj == null)
+            {
+                return NotFound();
+            }
+            return View(obj);
+        }
+
+        //post delete
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult DeletePost(int? id)
+        {
+            var obj = _db.Cars.Find(id);
+            if(obj == null)
+            {
+                return NotFound();
+            }
+            _db.Cars.Remove(obj);
             _db.SaveChanges();
             return RedirectToAction("Index");
         }
