@@ -17,7 +17,7 @@
                 @Html.DisplayNameFor(model => model.StanGotowosci)
             </th>
             <th>
-                <a onclick="showInPopupCreate('@Url.Action("Create","Car",null,Context.Request.Scheme)', 'Dodaj saomochód')" class="btn btn-success">
+                <a onclick="showInPopupCreate('@Url.Action("Create","Car",null,Context.Request.Scheme)', 'Dodaj samochód')" class="btn btn-success">
                     <i class="fas fa-random"></i>Dodaj samochód
                 </a>
 
@@ -42,10 +42,10 @@
                     @Html.DisplayFor(modelItem => item.StanGotowosci)
                 </td>
                 <td>
-                    <a onclick="showInPopupCreate('@Url.Action("Edit","Car",item.Id,Context.Request.Scheme)', 'Dodaj saomochód')" class="btn btn-success">
+                    <a onclick="showInPopupCreate('@Url.Action("Update","Car",item.Id,Context.Request.Scheme)', 'Dodaj samochód')" class="btn btn-success">
                         <i class="fas fa-random"></i>Edytuj
                     </a>
-                    <a asp-controller="Car" asp-action="Delete" asp-route-id="@item.Id">Delete12312312</a>
+                    <a asp-controller="Car" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
                 </td>
             </tr>
         }
