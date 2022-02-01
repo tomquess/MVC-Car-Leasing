@@ -43,6 +43,8 @@ namespace ASP_NET_Project
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseBrowserLink();
+
             }
             else
             {
