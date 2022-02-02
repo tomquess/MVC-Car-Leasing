@@ -47,7 +47,7 @@
                 </td>
                 <td>
                     <a onclick="showInPopupCreate('@Url.Action("Update","Car",new {id=item.Id},Context.Request.Scheme)', 'Dodaj samochód')" class="btn btn-success">
-                        <i class="fas fa-random"></i>Edytuj
+                        <i class="fas fa-pencil"></i>Edytuj
                     </a>
                     <form asp-action="DeletePost" asp-route-id="@item.Id" onsubmit="JqueryAjaxDelete(this);" class="d-inline">
                         <input type="submit" value="Delete" class="btn btn-danger" />
