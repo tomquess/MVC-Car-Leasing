@@ -7,7 +7,7 @@
 
 <div class="row">
     <div class="col-md-12">
-        <form asp-action="Create">
+        <form asp-action="Create" onsubmit="jQueryAjaxPost(this);">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
             <div class="form-group">
@@ -27,7 +27,8 @@
             </div>
             <div class="form-group">
                 <label asp-for="RokProdukcji" class="control-label"></label>
-                <input asp-for="RokProdukcji" class="form-control" />
+                <input asp-for="RokProdukcji" class="form-control" asp-format="{0:yyyy}" />
+                @Html.TextBoxFor(m => m.RokProdukcji, "{0:yyyy}")
                 <span asp-validation-for="RokProdukcji" class="text-danger"></span>
             </div>
             <div class="form-group">

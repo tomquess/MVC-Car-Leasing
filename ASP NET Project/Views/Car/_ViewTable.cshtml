@@ -46,19 +46,9 @@
                     @Html.DisplayFor(modelItem => item.StanGotowosci)
                 </td>
                 <td>
-                    @if (SignInManager.IsSignedIn(User))
-                    {
-                        <a onclick="showInPopupCreate('@Url.Action("Update","Car",item.Id,Context.Request.Scheme)', 'Dodaj samochód')" class="btn btn-success">
-                            <i class="fas fa-random"></i>Edytuj
-                        </a>
-                    }
-                    else
-                    {
-                        <a class="btn btn-success" id="login" asp-area="Identity" asp-page="/Account/Login">
-                            <i class="fas fa-random"></i>Zaloguj sie
-                        </a>
-                    }
-
+                    <a onclick="showInPopupCreate('@Url.Action("Update","Car",new {id=item.Id},Context.Request.Scheme)', 'Dodaj samochód')" class="btn btn-success">
+                        <i class="fas fa-random"></i>Edytuj
+                    </a>
                     <a asp-controller="Car" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
                 </td>
             </tr>
@@ -66,3 +56,9 @@
     </tbody>
 
 </table>
+@if (SignInManager.IsSignedIn(User)){
+
+} else
+            {
+
+            }
