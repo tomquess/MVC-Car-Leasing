@@ -1,8 +1,83 @@
-﻿@{
+﻿@inject Microsoft.Extensions.Configuration.IConfiguration Configuration
+
+
+@{
     ViewData["Title"] = "Home Page";
 }
+<div class="bg-light">
+    <div id="demo" class="carousel slide" data-ride="carousel">
+        <ul class="carousel-indicators">
+            <li data-target="#demo" data-slide-to="0" class="active"></li>
+            <li data-target="#demo" data-slide-to="1"></li>
+            <li data-target="#demo" data-slide-to="2"></li>
+        </ul>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://autofakty.pl/wp-content/uploads/2016/09/Untitled-design-3.jpg" alt="Opel" width="1100" height="500">
+                <div class="carousel-caption">
+                    <h3>Opel Astra</h3>
+                    <p>Wyprodukowany w 2012r.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://pictures.topspeed.com/IMG/crop_webp/200612/2006-peugeot-407-40_1920x1080.webp" alt="Peugot" width="1100" height="500">
+                <div class="carousel-caption">
+                    <h3>Peugeot 407</h3>
+                    <p>Wyprodukowany w 2010r.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://dodajauto.pl/imgs/ESd8jAONpQozALoyPKxlBcsKxCG8jY5x.jpg" alt="Volkswagen" width="1100" height="500">
+                <div class="carousel-caption">
+                    <h3>Volkswagen Golf</h3>
+                    <p>Wyptodukowany w 2016r.!</p>
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#demo" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </a>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4">
+            <h2 class="text-center">O nas</h2>
+            <p>Jesteśmy wypożyczalnią samochodów działającą w Sopocie.</p>
+            <p>Można się z nami skontaktować telefoniczną i mailową</p>
+            <p>Telefon: 881 221 992</p>
+            <p>Email: super-wpozyczalnia@wp.pl</p>
+        </div>
+        <div class="col-sm-8">
+            <h2 class="text-center">Lokalizacja</h2>
+            <div id="googleMap" style="width:100%;height:400px;"></div>
+        </div>
+        <script>
+            function myMap() {
+                const myLatLng = { lat: 54.445037, lng: 18.553528 }
+                var mapProp = {
+                    center: myLatLng,
+                    zoom: 13,
+                };
+                var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+                new google.maps.Marker({
+                    position: myLatLng,
+                    map,
+                    title: "Nasza Lokalizacja",
+                });
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+            }
+
+        </script>
+        @{
+            var key = Configuration["Google_api_key"];
+         }
+        <script src="https://maps.googleapis.com/maps/api/js?key=@key&callback=myMap"></script>
+
+
+
+    </div>
 </div>

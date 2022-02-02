@@ -15,7 +15,7 @@ namespace ASP_NET_Project.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     NrRejestracji = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Model = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    RokProdukcji = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    RokProdukcji = table.Column<int>(type: "int", nullable: false),
                     StanGotowosci = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>

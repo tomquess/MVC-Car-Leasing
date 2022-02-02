@@ -28,7 +28,7 @@ namespace ASP_NET_Project.Models
 
         [Display(Name = "Rok Produkcji")]
         //[DisplayFormat(DataFormatString = "{0: yyyy}", ApplyFormatInEditMode = true)]
-        [StringLength(4, MinimumLength = 4, ErrorMessage ="Rok musi się składać z 4 cyfr")]
+        //[ErrorMessage ="Rok musi się składać z 4 cyfr")]
         public int RokProdukcji { get; set; }
 
         [Display(Name = "Stan Techniczny")]
