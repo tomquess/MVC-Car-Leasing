@@ -1,5 +1,9 @@
 ﻿@model IEnumerable<ASP_NET_Project.Models.Car>
+@using Microsoft.AspNetCore.Identity
+@using ASP_NET_Project.Areas.Identity.Data
 
+@inject SignInManager<AppUser> SignInManager
+@inject UserManager<AppUser> UserManager
 
 <table class="table">
     <thead>
@@ -42,9 +46,19 @@
                     @Html.DisplayFor(modelItem => item.StanGotowosci)
                 </td>
                 <td>
-                    <a onclick="showInPopupCreate('@Url.Action("Update","Car",item.Id,Context.Request.Scheme)', 'Dodaj samochód')" class="btn btn-success">
-                        <i class="fas fa-random"></i>Edytuj
-                    </a>
+                    @if (SignInManager.IsSignedIn(User))
+                    {
+                        <a onclick="showInPopupCreate('@Url.Action("Update","Car",item.Id,Context.Request.Scheme)', 'Dodaj samochód')" class="btn btn-success">
+                            <i class="fas fa-random"></i>Edytuj
+                        </a>
+                    }
+                    else
+                    {
+                        <a class="btn btn-success" id="login" asp-area="Identity" asp-page="/Account/Login">
+                            <i class="fas fa-random"></i>Zaloguj sie
+                        </a>
+                    }
+
                     <a asp-controller="Car" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
                 </td>
             </tr>

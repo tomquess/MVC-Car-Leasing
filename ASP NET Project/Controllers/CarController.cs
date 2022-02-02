@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ASP_NET_Project.Controllers
 {
@@ -64,6 +65,7 @@ namespace ASP_NET_Project.Controllers
         //post delete
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public IActionResult DeletePost(int? id)
         {
             var obj = _db.Cars.Find(id);
@@ -93,7 +95,8 @@ namespace ASP_NET_Project.Controllers
 
         //post update
         [HttpPost]
-        [ValidateAntiForgeryToken]
+        [ValidateAntiForgeryToken]  
+        [Authorize]
         public IActionResult Update(Car obj)
         {
             if (ModelState.IsValid)
