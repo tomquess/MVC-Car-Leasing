@@ -1,15 +1,26 @@
 ﻿@model IEnumerable<ASP_NET_Project.Models.Client>
+@using Microsoft.AspNetCore.Identity
+@using ASP_NET_Project.Areas.Identity.Data
+
+@inject SignInManager<AppUser> SignInManager
+
 
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Lista klientów</h1>
+@if (SignInManager.IsSignedIn(User))
+{
 
-<p>
-    <a asp-action="Create">Dodaj</a>
-</p>
+}
+else
+{
+    <h1> Bład autoryzacji, dostępne tylko dla zalogowanych</h1>
+}
+
+<h1 class="text-center">Lista klientów</h1>
+
 <table class="table">
     <thead>
         <tr>
@@ -25,29 +36,36 @@
             <th>
                 @Html.DisplayNameFor(model => model.Nazwisko)
             </th>
-            <th></th>
+            <th>
+                <a asp-action="Create" class="btn btn-success">
+                    <i class="fas fa-random"></i> Dodaj Klienta
+                </a>
+            </th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.NrDowodu)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Pesel)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Imie)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nazwisko)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edytuj</a>|
-                <a asp-action="Delete" asp-route-id="@item.Id">Usuń</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NrDowodu)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Pesel)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Imie)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nazwisko)
+                </td>
+                <td>
+                    <a asp-action="Update" asp-route-id="@item.Id" class="btn btn-success"><i class="fas fa-pencil"></i> Edytuj</a>
+                    <form asp-action="DeletePost" asp-route-id="@item.Id" onsubmit="JqueryAjaxDelete(this);" class="d-inline">
+                        <input type="submit" value="Usuń" class="btn btn-danger" />
+                    </form>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

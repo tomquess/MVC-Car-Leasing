@@ -183,13 +183,17 @@ namespace ASP_NET_Project.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Create(Car obj)
         {
-            //tutaj trzeba dodać try-catch który będzie zwracał wartości to jest waildacja form i jest potrzebna na 3 catch (DbUpdateConcurrencyException)
-            if (ModelState.IsValid)
-            {
-                _db.Cars.Add(obj);
-                _db.SaveChanges();
-                return RedirectToAction("Index");
-            }
+               if (ModelState.IsValid)
+                    {
+                        _db.Cars.Add(obj);
+                        _db.SaveChanges();
+                        return RedirectToAction("Index");
+                    }
+               //return View(obj);
+               return RedirectToAction("CreateError", obj);
+        }
+        public IActionResult CreateError(Car obj)
+        {
             return View(obj);
         }
         //get delete
@@ -248,8 +252,12 @@ namespace ASP_NET_Project.Controllers
             {
                 _db.Cars.Update(obj);
                 _db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", obj);
             }
+            return RedirectToAction("UpdateError");
+        }
+        public IActionResult UpdateError(Car obj)
+        {
             return View(obj);
         }
 

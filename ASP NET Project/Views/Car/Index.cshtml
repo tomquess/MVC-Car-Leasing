@@ -1,4 +1,9 @@
 ﻿@model IEnumerable<ASP_NET_Project.Models.Car>
+@using Microsoft.AspNetCore.Identity
+@using ASP_NET_Project.Areas.Identity.Data
+
+@inject SignInManager<AppUser> SignInManager
+
 
 @{
     ViewData["Title"] = "Index";
@@ -7,6 +12,15 @@
 
 <h1 class="text-center">Lista Samochodów</h1>
 
+@if (SignInManager.IsSignedIn(User))
+{
+
+}
+else
+{
+    <h1> Bład autoryzacji, dostępne tylko dla zalogowanych</h1>
+}
+
 <div id="view-all">
-     @await Html.PartialAsync("_ViewTable", Model)
+    @await Html.PartialAsync("_ViewTable", Model)
 </div>
