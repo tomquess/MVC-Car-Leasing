@@ -6,33 +6,18 @@ using NUnit.Framework;
 namespace ASP_NET_Project.Tests.Controllers
 {
     [TestFixture]
-    public class ClientControllerTests
+    public class LendingControllerTests
     {
-
         private readonly ApplicationDbContext _db;
 
         [Test]
         public void IndexTest()
         {
             // Arrange
-            ClientController clientController = new ClientController(_db);
+            LendingController lendingController = new LendingController(_db);
 
             // Act
-            var result = clientController.Index() as ViewResult;
-
-            // Assert
-            Assert.IsNotNull(result);
-        }
-
-        [Test]
-        public void DetailsTest()
-        {
-            // Arrange
-            ClientController clientController = new ClientController(_db);
-
-            // Act
-            var id = 2;
-            var result = clientController.Details(id) as ViewResult;
+            var result = lendingController.Index() as ViewResult;
 
             // Assert
             Assert.IsNotNull(result);
@@ -42,10 +27,23 @@ namespace ASP_NET_Project.Tests.Controllers
         public void CreateTest()
         {
             // Arrange
-            ClientController clientController = new ClientController(_db);
+            LendingController lendingController = new LendingController(_db);
 
             // Act
-            var result = clientController.Create() as ViewResult;
+            var result = lendingController.Create() as ViewResult;
+
+            // Assert
+            Assert.IsNotNull(result);
+        }
+
+        [Test]
+        public void CreateErrorTest()
+        {
+            // Arrange
+            LendingController lendingController = new LendingController(_db);
+
+            // Act
+            var result = lendingController.CreateError() as ViewResult;
 
             // Assert
             Assert.IsNotNull(result);
@@ -55,11 +53,11 @@ namespace ASP_NET_Project.Tests.Controllers
         public void DeleteTest()
         {
             // Arrange
-            ClientController clientController = new ClientController(_db);
+            LendingController lendingController = new LendingController(_db);
 
             // Act
             var id = 2;
-            var result = clientController.Delete(id) as ViewResult;
+            var result = lendingController.Delete(id) as ViewResult;
 
             // Assert
             Assert.IsNotNull(result);
@@ -69,11 +67,11 @@ namespace ASP_NET_Project.Tests.Controllers
         public void DeletePostTest()
         {
             // Arrange
-            ClientController clientController = new ClientController(_db);
+            LendingController lendingController = new LendingController(_db);
 
             // Act
             var id = 2;
-            var result = clientController.DeletePost(id) as ViewResult;
+            var result = lendingController.DeletePost(id) as ViewResult;
 
             // Assert
             Assert.IsNotNull(result);
@@ -83,11 +81,11 @@ namespace ASP_NET_Project.Tests.Controllers
         public void UpdateTest()
         {
             // Arrange
-            ClientController clientController = new ClientController(_db);
+            LendingController lendingController = new LendingController(_db);
 
             // Act
             var id = 2;
-            var result = clientController.Update(id) as ViewResult;
+            var result = lendingController.Update(id) as ViewResult;
 
             // Assert
             Assert.IsNotNull(result);
