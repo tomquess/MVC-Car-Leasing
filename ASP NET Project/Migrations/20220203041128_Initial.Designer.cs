@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ASP_NET_Project.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220202170221_all")]
-    partial class all
+    [Migration("20220203041128_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -101,7 +101,9 @@ namespace ASP_NET_Project.Migrations
             modelBuilder.Entity("ASP_NET_Project.Models.Lending", b =>
                 {
                     b.Property<int>("Id")
-                        .HasColumnType("int");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<int>("CarId")
                         .HasColumnType("int");
@@ -121,6 +123,10 @@ namespace ASP_NET_Project.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("CarId");
+
+                    b.HasIndex("ClientId");
+
                     b.ToTable("Lendings");
                 });
 
@@ -128,13 +134,13 @@ namespace ASP_NET_Project.Migrations
                 {
                     b.HasOne("ASP_NET_Project.Models.Car", "Cars")
                         .WithMany()
-                        .HasForeignKey("Id")
+                        .HasForeignKey("CarId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("ASP_NET_Project.Models.Client", "Clients")
                         .WithMany()
-                        .HasForeignKey("Id")
+                        .HasForeignKey("ClientId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

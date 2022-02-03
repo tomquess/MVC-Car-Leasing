@@ -11,7 +11,6 @@ namespace ASP_NET_Project.Models
     public class Car
     {
         [Key]
-        //poprawcie żeby działało
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int? Id { get; set; }
 

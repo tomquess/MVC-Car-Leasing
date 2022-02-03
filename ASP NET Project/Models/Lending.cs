@@ -11,20 +11,23 @@ namespace ASP_NET_Project.Models
     public class Lending
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
         // Foreign keys 
+        [Required]
         [Display(Name = "Numer id auta")]
+        [ForeignKey("Cars")]
         public int CarId { get; set; }
 
-        [ForeignKey("Id")]
         public virtual Car Cars { get; set; }
 
         // Foreign key 
+        [Required]
         [Display(Name = "Numer id klienta")]
+        [ForeignKey("Clients")]
         public int ClientId { get; set; }
 
-        [ForeignKey("Id")]
         public virtual Client Clients { get; set; }
 
         [Display(Name = "Data wypozyczenia")]

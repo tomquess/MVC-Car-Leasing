@@ -176,6 +176,8 @@ namespace ASP_NET_Project.Controllers
             return View();
         }
 
+
+
         // POST: CarController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
