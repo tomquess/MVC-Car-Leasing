@@ -1,9 +1,9 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace ASP_NET_Project.Migrations.AuthDb
+namespace ASP_NET_Project.Migrations
 {
-    public partial class CreateIdentitySchema : Migration
+    public partial class addUsers : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

@@ -7,11 +7,11 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace ASP_NET_Project.Migrations.AuthDb
+namespace ASP_NET_Project.Migrations
 {
     [DbContext(typeof(AuthDbContext))]
-    [Migration("20220130194251_updateAuthDb")]
-    partial class updateAuthDb
+    [Migration("20220202212431_addUsers")]
+    partial class addUsers
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -39,12 +39,6 @@ namespace ASP_NET_Project.Migrations.AuthDb
 
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("bit");
-
-                    b.Property<string>("FirstName")
-                        .HasColumnType("varchar(100)");
-
-                    b.Property<string>("LastName")
-                        .HasColumnType("varchar(100)");
 
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("bit");

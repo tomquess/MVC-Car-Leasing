@@ -4,16 +4,14 @@ using ASP_NET_Project.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace ASP_NET_Project.Migrations.AuthDb
+namespace ASP_NET_Project.Migrations
 {
     [DbContext(typeof(AuthDbContext))]
-    [Migration("20220130192057_CreateIdentitySchema")]
-    partial class CreateIdentitySchema
+    partial class AuthDbContextModelSnapshot : ModelSnapshot
     {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

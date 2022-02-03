@@ -7,11 +7,11 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace ASP_NET_Project.Migrations
+namespace ASP_NET_Project.Migrations.ApplicationDb
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220202164110_date")]
-    partial class date
+    [Migration("20220202212507_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -39,7 +39,6 @@ namespace ASP_NET_Project.Migrations
                         .HasColumnType("nvarchar(9)");
 
                     b.Property<int>("RokProdukcji")
-                        .HasMaxLength(4)
                         .HasColumnType("int");
 
                     b.Property<string>("StanGotowosci")
