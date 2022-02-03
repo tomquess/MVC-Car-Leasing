@@ -14,6 +14,12 @@ namespace ASP_NET_Project.Data
 
         }
 
+        // added for testing purposes
+        protected ApplicationDbContext()
+        {
+
+        }
+
         public DbSet<Item> Items { get; set; }
 
         public DbSet<Car> Cars { get; set; }

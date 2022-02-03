@@ -68,5 +68,7 @@ namespace ASP_NET_Project
                 endpoints.MapRazorPages();
             });
         }
+
+
     }
 }
