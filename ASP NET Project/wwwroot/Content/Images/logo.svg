@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="48"
+   height="48"
+   viewBox="0 0 48 48"
+   version="1.1"
+   id="SVGRoot"
+   sodipodi:docname="LendingCar.svg"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   inkscape:export-filename="C:\Users\mateu\Pictures\VectorImages\LendingCar.png"
+   inkscape:export-xdpi="192"
+   inkscape:export-ydpi="192"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview269"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="px"
+     showgrid="true"
+     inkscape:zoom="9.2495988"
+     inkscape:cx="3.0812147"
+     inkscape:cy="29.785076"
+     inkscape:window-width="1920"
+     inkscape:window-height="1001"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     showguides="true"
+     units="px">
+    <inkscape:grid
+       type="xygrid"
+       id="grid275" />
+  </sodipodi:namedview>
+  <defs
+     id="defs264" />
+  <g
+     inkscape:label="Warstwa 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g35473"
+       transform="matrix(3.2610564,0,0,3.5130372,-1.7776715,-2.5130372)">
+      <ellipse
+         style="fill:#ffffff"
+         id="path12184"
+         cx="5.5"
+         cy="11"
+         rx="1.5"
+         ry="1" />
+      <ellipse
+         style="fill:#ffffff"
+         id="path12186"
+         cx="10.5"
+         cy="11"
+         rx="1.5"
+         ry="1" />
+      <circle
+         style="fill:#000000;stroke-width:0.748347"
+         id="path12232"
+         cx="5.5549712"
+         cy="11.3928"
+         r="1.1225197" />
+      <circle
+         style="fill:#000000;stroke-width:0.748347"
+         id="path12234"
+         cx="10.3928"
+         cy="11.3928"
+         r="1.1225197" />
+      <path
+         style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="M 3,8 5,6 h 4 l 1,1 1,1 2,1 v 1 l -1,1 v 0 0"
+         id="path12319" />
+      <path
+         style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 3,8 -1,1 1,1 v 0"
+         id="path12514" />
+      <path
+         style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 3,10 1,1"
+         id="path12516" />
+      <path
+         style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="M 7,11 H 9"
+         id="path12518" />
+      <path
+         style="fill:#000000"
+         id="path14516"
+         d="M 0.78621284,13.97891 C 2.2075958,13.836195 3.6347115,13.742505 5.0626248,13.697958 c 0.5210803,-0.01626 1.0424796,-0.0198 1.5637194,-0.0297 1.2154431,-0.008 2.430898,0.02543 3.6440078,0.100189 0.24723,0.01524 0.493882,0.03912 0.741144,0.05382 0.35504,0.02111 0.710639,0.03149 1.0659,0.04849 0,0 2.880233,-1.484598 2.880233,-1.484598 v 0 c -0.199175,0.0233 -0.397752,0.05244 -0.597525,0.06989 -0.221683,0.01936 -1.58266,0.0969 -1.717691,0.103683 -1.343913,0.06755 -2.6893847,0.109407 -4.035181,0.0995 -1.1896475,-0.02737 -1.5267407,-0.018 -2.6709889,-0.10546 -0.3013466,-0.02303 -0.60202,-0.055 -0.9021256,-0.09073 -0.2747177,-0.03271 -0.5525466,-0.07646 -0.8231446,-0.138162 -0.038826,-0.0089 -0.076664,-0.02159 -0.1149955,-0.03238 0,0 -3.30976456,1.68641 -3.30976456,1.68641 z" />
+      <ellipse
+         style="fill:#000000"
+         id="path34420"
+         cx="7.5"
+         cy="3"
+         rx="2.5"
+         ry="2" />
+      <ellipse
+         style="fill:#ffffff"
+         id="path34552"
+         cx="7.5"
+         cy="3"
+         rx="1.5"
+         ry="2" />
+      <text
+         xml:space="preserve"
+         style="font-size:3.98576px;line-height:1.25;font-family:sans-serif;stroke-width:0.597861"
+         x="4.8998971"
+         y="4.888824"
+         id="text30017"
+         transform="scale(1.2193259,0.82012528)"><tspan
+           sodipodi:role="line"
+           id="tspan30015"
+           x="4.8998971"
+           y="4.888824"
+           style="stroke-width:0.597861">$</tspan></text>
+      <circle
+         style="fill:#000000"
+         id="path34704"
+         cx="7.5"
+         cy="8.5"
+         r="1.5" />
+      <ellipse
+         style="fill:#ffffff;stroke-width:1.27"
+         id="path35021"
+         cx="7.486464"
+         cy="8.5134916"
+         rx="1.2973101"
+         ry="1.2432538" />
+      <path
+         style="fill:none;stroke:#000000;stroke-width:0.325863px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="M 7.2314617,8.3943237 8.3746685,8.7658613"
+         id="path35208"
+         inkscape:transform-center-x="-0.060566402"
+         inkscape:transform-center-y="-0.0039347045" />
+      <path
+         style="fill:none;stroke:#000000;stroke-width:0.326013px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="M 7.294647,9.6186121 7.376823,8.3252971"
+         id="path35323"
+         inkscape:transform-center-x="0.02220941"
+         inkscape:transform-center-y="-0.76903135" />
+    </g>
+  </g>
+</svg>

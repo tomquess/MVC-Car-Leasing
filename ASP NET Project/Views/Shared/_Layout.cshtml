@@ -9,6 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Wypożyczalnia Samochodów</title>
+    <link rel="icon" href="@Url.Content("~/Content/Images/favicon.svg")" />
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,26 +24,28 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Wypożyczalnia Samochodów</a>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                    <img id="img_logo" alt="Logo" src="@Url.Content("~/Content/Images/LendingCar32x32.svg")" ALIGN="left" />Wypożyczalnia Samochodów
+                </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
-@*                        @if (SignInManager.IsSignedIn(User))
-                        {
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Car" asp-action="Index">Auta</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Client" asp-action="Index">Lista klientów</a>
-                            </li>
-                            <li class="nav-item ml-5">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Lending" asp-action="Index">Wypożycz</a>
-                            </li>
-                        }*@
-                      <li class="nav-item">
+                        @*                        @if (SignInManager.IsSignedIn(User))
+                {
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Car" asp-action="Index">Auta</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Client" asp-action="Index">Lista klientów</a>
+                    </li>
+                    <li class="nav-item ml-5">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Lending" asp-action="Index">Wypożycz</a>
+                    </li>
+                }*@
+                        <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Car" asp-action="Index">Auta</a>
                         </li>
                         <li class="nav-item">
