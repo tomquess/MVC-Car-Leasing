@@ -64,27 +64,5 @@ JqueryAjaxDelete = form => {
     }
     return false;
 }
-function myMap() {
-    var mapProp = {
-        center: new google.maps.LatLng(54.445037, 18.553528),
-        zoom: 9,
-    };
-    var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
-    var Marker = new google.maps.Marker({
-        position: { lat: 54.445037, lng: 18.553528 },
-        map,
-        title: "Jesteśmy tutaj",
-    });
-    const infowindow = new google.maps.InfoWindow({
-        content: <p>Tutaj znajduje się nasze biuro</p>,
-    });
 
-    marker.addListener("click", () => {
-        infowindow.open({
-            anchor: marker,
-            map,
-            shouldFocus: false,
-        });
-    });
-}
 
