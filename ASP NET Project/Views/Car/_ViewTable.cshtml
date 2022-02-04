@@ -22,7 +22,7 @@
             </th>
             <th>
                 <a onclick="showInPopupCreate('@Url.Action("Create","Car",null,Context.Request.Scheme)', 'Dodaj samochód')" class="btn btn-success">
-                    <i class="fas fa-random"></i>Dodaj samochód
+                    <i class="fas fa-random"></i> Dodaj samochód
                 </a>
 
             </th>
@@ -47,7 +47,7 @@
                 </td>
                 <td>
                     <a onclick="showInPopupCreate('@Url.Action("Update","Car",new {id=item.Id},Context.Request.Scheme)', 'Dodaj samochód')" class="btn btn-success">
-                        <i class="fas fa-pencil"></i>Edytuj
+                        <i class="fas fa-pencil"></i> Edytuj
                     </a>
                     <form asp-action="DeletePost" asp-route-id="@item.Id" onsubmit="JqueryAjaxDelete(this);" class="d-inline">
                         <input type="submit" value="Usuń" class="btn btn-danger" />
@@ -58,9 +58,11 @@
     </tbody>
 
 </table>
-@if (SignInManager.IsSignedIn(User)){
+@if (SignInManager.IsSignedIn(User))
+ {
 
-} else
-            {
+ } 
+else
+ {
 
-            }
+ }

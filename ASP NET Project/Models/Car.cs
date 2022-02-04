@@ -15,7 +15,7 @@ namespace ASP_NET_Project.Models
         public int? Id { get; set; }
 
         [Display(Name = "Numer Rejestracji")]
-        [Required(ErrorMessage = "Podaj numer rejestracji auta")]
+        [Required(ErrorMessage = "Podaj numer rejestracji auta od 7 do 9 cyfr")]
         [StringLength(9, MinimumLength = 7, ErrorMessage = "Numer rejestracji ma od 7 do 9 znaków")]
 
         // [StringLength(3, MinimumLength = 2, ErrorMessage = "Kod kraju musi mieć od 2 do 3 znaków")]
@@ -27,7 +27,7 @@ namespace ASP_NET_Project.Models
 
         [Display(Name = "Rok Produkcji")]
         //[DisplayFormat(DataFormatString = "{0: yyyy}", ApplyFormatInEditMode = true)]
-        //[ErrorMessage ="Rok musi się składać z 4 cyfr")]
+        //[Required{ErrorMessage ="Rok musi się składać z 4 cyfr")]
         public int RokProdukcji { get; set; }
 
         [Display(Name = "Stan Techniczny")]

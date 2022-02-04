@@ -1,4 +1,5 @@
 using ASP_NET_Project.Data;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -35,6 +36,13 @@ namespace ASP_NET_Project
                 googleOptions.ClientSecret = "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";
             });
             services.AddControllersWithViews();
+
+            // Sets the display of the Cookie Consent banner (/Pages/Shared/_CookieConsentPartial.cshtml).
+            // This lambda determines whether user consent for non-essential cookies is needed for a given request.
+            services.Configure<CookiePolicyOptions>(options => {
+                options.CheckConsentNeeded = context => true;
+                options.MinimumSameSitePolicy = SameSiteMode.Strict;
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -52,6 +60,10 @@ namespace ASP_NET_Project
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+
+            // used for displaying cookie banner
+            app.UseCookiePolicy();
+
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
@@ -67,6 +79,9 @@ namespace ASP_NET_Project
                     pattern: "{controller=Home}/{action=Index}/{id?}");
                 endpoints.MapRazorPages();
             });
+
         }
+
+
     }
 }
