@@ -151,6 +151,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace ASP_NET_Project.Controllers
 {
+    [Authorize]
     public class CarController : Controller
     {
 

@@ -8,6 +8,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20220203124125_Initial.cs" />
+    <Compile Remove="Migrations\20220203124125_Initial.Designer.cs" />
+    <Compile Remove="Migrations\ApplicationDbContextModelSnapshot.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="wwwroot\Content\Images\LendingCar.png" />
     <None Include="wwwroot\Content\Images\logo.svg" />
   </ItemGroup>
@@ -28,6 +34,10 @@
     <PackageReference Include="moq" Version="4.16.1" />
     <PackageReference Include="NUnit" Version="3.13.2" />
     <PackageReference Include="NUnit3TestAdapter" Version="4.2.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Migrations\" />
   </ItemGroup>
 
 </Project>

@@ -12,6 +12,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace ASP_NET_Project.Controllers
 {
+    [Authorize]
     public class LendingController : Controller
     {
         private readonly ApplicationDbContext _db;
