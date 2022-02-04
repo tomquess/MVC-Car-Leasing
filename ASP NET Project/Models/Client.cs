@@ -16,10 +16,11 @@ namespace ASP_NET_Project.Models
 
         [Display(Name = "Numer Dowodu")]
         [Required(ErrorMessage = "Podaj numer dowodu klienta")]
-       // [StringLength(3, MinimumLength = 2, ErrorMessage = "Kod kraju musi mieć od 2 do 3 znaków")]
+        [StringLength(9, MinimumLength = 9, ErrorMessage = "Numer dowodu musi zawierać 9 znaków (bez odstępów)")]
         public string NrDowodu { get; set; }
 
         [Required(ErrorMessage = "Podaj numer pesel klienta")]
+        [StringLength(9, MinimumLength = 9, ErrorMessage = "Numer pesel musi zawierać 11 cyfr")]
         public string Pesel { get; set; }
 
         [Required(ErrorMessage = "Podaj imie klienta")]
