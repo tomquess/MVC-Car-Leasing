@@ -41,7 +41,7 @@ namespace ASP_NET_Project
             // This lambda determines whether user consent for non-essential cookies is needed for a given request.
             services.Configure<CookiePolicyOptions>(options => {
                 options.CheckConsentNeeded = context => true;
-                options.MinimumSameSitePolicy = SameSiteMode.Strict;
+                options.MinimumSameSitePolicy = SameSiteMode.Lax;
             });
         }
 
