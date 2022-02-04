@@ -9,13 +9,13 @@
 
     @if (showBanner)
     {
-                                                 <div id="cookieConsent" class="alert alert-info alert-dismissible fade show" role="alert">
-                                                     <!--Please note that on our website we use cookies necessary for the functioning of our website, cookies that optimize the performance. To learn more about our cookies, how we use them and their benefits, please read our Cookie Policy.-->
-                                                     Drogi użytkowniku, na naszej stronie internetowej używamy plików cookie niezbędnych do funkcjonowania naszej strony internetowej, plików cookie, które optymalizują wydajność. Aby dowiedzieć się więcej o naszych plikach cookie, sposobie ich używania i ich zaletach, zapoznaj się z naszą polityką dotyczącą plików cookie. <a asp-page="/Privacy">Dowiedz się więcej</a>.
-                                                     <button type="button" class="accept-policy close" data-dismiss="alert" aria-label="Close" data-cookie-string="@cookieString">
-                                                         <span aria-hidden="true">Akceptuję</span>
-                                                     </button>
-                                                 </div>
+        <div id="cookieConsent" class="alert alert-info alert-dismissible fade show" role="alert">
+            <!--Please note that on our website we use cookies necessary for the functioning of our website, cookies that optimize the performance. To learn more about our cookies, how we use them and their benefits, please read our Cookie Policy.-->
+            Drogi użytkowniku, na naszej stronie internetowej używamy plików cookie niezbędnych do funkcjonowania naszej strony internetowej, plików cookie, które optymalizują wydajność. Aby dowiedzieć się więcej o naszych plikach cookie, sposobie ich używania i ich zaletach, zapoznaj się z naszą polityką dotyczącą plików cookie. <a asp-page="/Privacy">Dowiedz się więcej</a>.
+            <button type="button" class="accept-policy close" data-dismiss="alert" aria-label="Close" data-cookie-string="@cookieString">
+                <span aria-hidden="true">Akceptuję</span>
+            </button>
+        </div>
     <script>
         (function () {
             var button = document.querySelector("#cookieConsent button[data-cookie-string]");

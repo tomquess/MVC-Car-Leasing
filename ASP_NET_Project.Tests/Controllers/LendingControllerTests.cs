@@ -21,6 +21,7 @@ namespace ASP_NET_Project.Tests.Controllers
 
             // Assert
             Assert.IsNotNull(result);
+            Assert.Pass();
         }
 
         [Test]
@@ -56,7 +57,7 @@ namespace ASP_NET_Project.Tests.Controllers
             LendingController lendingController = new LendingController(_db);
 
             // Act
-            var id = 2;
+            var id = 1;
             var result = lendingController.Delete(id) as ViewResult;
 
             // Assert
@@ -70,7 +71,7 @@ namespace ASP_NET_Project.Tests.Controllers
             LendingController lendingController = new LendingController(_db);
 
             // Act
-            var id = 2;
+            var id = 1;
             var result = lendingController.DeletePost(id) as ViewResult;
 
             // Assert
@@ -84,7 +85,7 @@ namespace ASP_NET_Project.Tests.Controllers
             LendingController lendingController = new LendingController(_db);
 
             // Act
-            var id = 2;
+            var id = 1;
             var result = lendingController.Update(id) as ViewResult;
 
             // Assert
