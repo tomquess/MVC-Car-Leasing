@@ -9,16 +9,20 @@ namespace ASP_NET_Project.Data
 {
     public class ApplicationDbContext : DbContext
     {
+        public ApplicationDbContext()
+        {
+        }
+
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
 
         }
 
         // added for testing purposes
-        protected ApplicationDbContext()
-        {
+        //protected ApplicationDbContext()
+        //{
 
-        }
+        //}
 
         public DbSet<Item> Items { get; set; }
 
