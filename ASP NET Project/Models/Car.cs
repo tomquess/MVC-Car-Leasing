@@ -22,7 +22,7 @@ namespace ASP_NET_Project.Models
         public string NrRejestracji { get; set; }
 
         [Required(ErrorMessage = "Podaj model auta")]
-        [StringLength(50, MinimumLength = 5, ErrorMessage = "Nazwa modelu samochodu może mieć od 5 do ")]
+        [StringLength(50, MinimumLength = 5, ErrorMessage = "Nazwa modelu samochodu może mieć od 5 znakow")]
         public string Model { get; set; }
 
         [Display(Name = "Rok Produkcji")]
